@@ -108,51 +108,129 @@
     <div id="quiz-questions"></div>
   </div>
 
-  <script>
-    function openenglish() {
-      window.open("englishwords.pdf");
-    }
+ <script>
+  function openenglish() {
+    window.open("englishwords.pdf");
+  }
 
-    function openfiveclass() {
-      window.open("5thclass.pdf");
-    }
+  function openfiveclass() {
+    window.open("5thclass.pdf");
+  }
 
-    function opennigthclass() {
-      window.open("8thclass.pdf");
-    }
+  function opennigthclass() {
+    window.open("8thclass.pdf");
+  }
 
-    function opensuvichar() {
-      window.open("300सुविचार.pdf");
-    }
+  function opensuvichar() {
+    window.open("300सुविचार.pdf");
+  }
 
- function openjocks() {
-      window.open("marathijocks.txt");
-    }
+  function openjocks() {
+    window.open("marathijocks.txt");
+  }
 
-    function showQuizModule() {
-      hideAllModules();
-      const quizContainer = document.getElementById('quiz-questions');
-      quizContainer.innerHTML = quizSentences.map((q, i) => `
+  function hideAllModules() {
+    document.querySelectorAll('.module-section').forEach(section => section.style.display = 'none');
+  }
+
+  // Sample grammar questions with options and correct answers
+  const quizData = [
+    {
+      question: "Choose the correct sentence:",
+      options: [
+        "She don't like coffee.",
+        "She doesn't likes coffee.",
+        "She doesn't like coffee.",
+        "She don't likes coffee."
+      ],
+      answer: 2
+    },
+    {
+      question: "Which one is a verb?",
+      options: ["Quickly", "Beautiful", "Run", "Blue"],
+      answer: 2
+    },
+    {
+      question: "Fill in the blank: I ____ to school every day.",
+      options: ["go", "going", "gone", "goes"],
+      answer: 0
+    },
+    {
+      question: "What is the past tense of 'eat'?",
+      options: ["Eated", "Ate", "Eating", "Eats"],
+      answer: 1
+    },
+    {
+      question: "Which sentence is in future tense?",
+      options: [
+        "She is eating an apple.",
+        "She has eaten an apple.",
+        "She will eat an apple.",
+        "She ate an apple."
+      ],
+      answer: 2
+    }
+  ];
+
+  function showQuizModule() {
+    hideAllModules();
+    const quizContainer = document.getElementById('quiz-questions');
+    quizContainer.innerHTML = '';
+
+    quizData.forEach((q, i) => {
+      const optionsHtml = q.options.map((opt, idx) => `
+        <li>
+          <label>
+            <input type="radio" name="q${i}" value="${idx}" />
+            ${opt}
+          </label>
+        </li>
+      `).join('');
+
+      quizContainer.innerHTML += `
         <div class="card mb-3 shadow-sm">
           <div class="card-body">
-            <p><strong>${i + 1}.</strong> ${q}</p>
-            <ul>
-              <li><input type="radio" name="q${i}" /> Option A</li>
-              <li><input type="radio" name="q${i}" /> Option B</li>
-              <li><input type="radio" name="q${i}" /> Option C</li>
-              <li><input type="radio" name="q${i}" /> Option D</li>
-            </ul>
+            <p><strong>${i + 1}.</strong> ${q.question}</p>
+            <ul>${optionsHtml}</ul>
+            <p class="feedback text-primary mt-2" id="feedback${i}"></p>
           </div>
         </div>
-      `).join('');
-      document.getElementById('quiz-module').style.display = 'block';
-    }
+      `;
+    });
 
-    function hideAllModules() {
-      document.querySelectorAll('.module-section').forEach(section => section.style.display = 'none');
-    }
+    quizContainer.innerHTML += `
+      <button class="btn btn-success mt-3" onclick="submitQuiz()">Submit Quiz</button>
+      <h4 class="mt-4" id="score"></h4>
+    `;
 
-    const quizSentences = Array.from({ length: 5 }, (_, i) => `Sentence ${i + 1}: This is a grammar question.`);
-  </script>
+    document.getElementById('quiz-module').style.display = 'block';
+  }
+
+  function submitQuiz() {
+    let score = 0;
+    quizData.forEach((q, i) => {
+      const selected = document.querySelector(`input[name="q${i}"]:checked`);
+      const feedback = document.getElementById(`feedback${i}`);
+      if (selected) {
+        const selectedIndex = parseInt(selected.value);
+        if (selectedIndex === q.answer) {
+          score++;
+          feedback.innerHTML = "✅ Correct!";
+          feedback.classList.remove("text-danger");
+          feedback.classList.add("text-success");
+        } else {
+          feedback.innerHTML = `❌ Wrong! Correct: ${q.options[q.answer]}`;
+          feedback.classList.remove("text-success");
+          feedback.classList.add("text-danger");
+        }
+      } else {
+        feedback.innerHTML = `❌ Not Attempted! Correct: ${q.options[q.answer]}`;
+        feedback.classList.add("text-danger");
+      }
+    });
+
+    document.getElementById('score').innerHTML = `🎯 You scored ${score} out of ${quizData.length}`;
+  }
+</script>
 </body>
 </html>
