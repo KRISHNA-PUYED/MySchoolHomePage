@@ -177,7 +177,14 @@
 
       if (uname =="student" && pass == "sindhi") {
         location.assign("schooldata.html");
-      } else {
+    
+      } 
+        else if (uname =="teacher" && pass == "sindhi") {
+        location.assign("studentAttendance.html");
+    
+      } 
+      
+      else {
         alert("Login failed! Try again.");
       }
     }
