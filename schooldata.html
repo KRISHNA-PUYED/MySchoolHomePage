@@ -67,22 +67,70 @@
     .card-body ul li {
       margin: 8px 0;
     }
+
+
+
+
+
+
+
+.custom-header {
+  background: linear-gradient(90deg, #4e54c8, #8f94fb);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border-bottom: 4px solid #fff;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.school-title {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 8px;
+}
+
+.custom-marquee {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #fff8dc;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
   </style>
 </head>
 <body>
+
+
+<!-- Add inside <body> at the top -->
+<header class="custom-header text-white text-center py-3">
+  <div class="container">
+    <h1 class="school-title">जि.प.प्रा.शाळा सिंधि</h1>
+    <marquee behavior="scroll" direction="left" class="custom-marquee">🌟 Welcome to Z.P. Primary School Sindhi | Quality Education | Creativity | Excellence 🌟</marquee>
+  </div>
+</header>
+
+
+
+
+
+
   <div class="container text-center py-5">
-    <h2 class="mb-4">🌟 Welcome! जि.प.प्रा.शाळा सिंधि</h2>
+   
     
     <div class="module-buttons">
       <button class="btn btn-outline-success btn-custom" onClick="openenglish()">📘 English-Marathi Words</button>
       <button class="btn btn-outline-info btn-custom" onclick="showQuizModule()">✏️ Grammar Quiz</button>
       <button class="btn btn-outline-warning btn-custom" onClick="openfiveclass()">📄 5th Class Scholarship Paper</button>
       <button class="btn btn-outline-danger btn-custom" onClick="opennigthclass()">📄 8th Class Scholarship Paper</button>
+     <button class="btn btn-outline-info btn-custom" onClick="openmultitable()">✏️ पाढे १ ते १००</button>
+      <button class="btn btn-outline-success btn-custom" onClick="opensquare()">✏️ वर्गमूळ १ ते १००</button>
       <button class="btn btn-outline-primary btn-custom" onClick="opensuvichar()">💬 सुविचार संग्रह</button>
       <button class="btn btn-outline-success btn-custom" onClick="openjocks()">💬 मराठी विनोद</button>
     </div>
 
-    <a href="index.html" class="btn btn-secondary back-btn">🔙 Back to Login</a>
+    <a href="homeschool.html" class="btn btn-secondary back-btn">🔙 Back to Login</a>
   </div>
 
   <!-- English-Marathi Words -->
@@ -108,7 +156,7 @@
     <div id="quiz-questions"></div>
   </div>
 
- <script>
+<script>
   function openenglish() {
     window.open("englishwords.pdf");
   }
@@ -128,6 +176,18 @@
   function openjocks() {
     window.open("marathijocks.txt");
   }
+
+
+function openmultitable()
+{
+ window.open("Multiplicationtable.pdf");
+}
+
+function opensquare()
+{
+window.open("squarecube1.pdf");
+
+}
 
   function hideAllModules() {
     document.querySelectorAll('.module-section').forEach(section => section.style.display = 'none');
@@ -232,5 +292,6 @@
     document.getElementById('score').innerHTML = `🎯 You scored ${score} out of ${quizData.length}`;
   }
 </script>
+
 </body>
 </html>
