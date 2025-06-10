@@ -68,42 +68,32 @@
       margin: 8px 0;
     }
 
+    .custom-header {
+      background: linear-gradient(90deg, #4e54c8, #8f94fb);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      border-bottom: 4px solid #fff;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
 
+    .school-title {
+      font-size: 2rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      margin-bottom: 8px;
+    }
 
-
-
-
-
-.custom-header {
-  background: linear-gradient(90deg, #4e54c8, #8f94fb);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  border-bottom: 4px solid #fff;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-}
-
-.school-title {
-  font-family: 'Segoe UI', sans-serif;
-  font-size: 2rem;
-  font-weight: 700;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  margin-bottom: 8px;
-}
-
-.custom-marquee {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #fff8dc;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-
+    .custom-marquee {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #fff8dc;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    }
   </style>
 </head>
 <body>
 
-
-<!-- Add inside <body> at the top -->
 <header class="custom-header text-white text-center py-3">
   <div class="container">
     <h1 class="school-title">जि.प.प्रा.शाळा सिंधि</h1>
@@ -111,143 +101,142 @@
   </div>
 </header>
 
-
-
-
-
-
-  <div class="container text-center py-5">
-   
-    
-    <div class="module-buttons">
-       <div class="module-buttons">
- <button class="btn btn-outline-info btn-custom" onClick="openmathproblems()">✏️ बेरीज-वजाबाकी-गुणाकार-भागाकर</button>
-
- <button class="btn btn-outline-danger btn-custom" onClick="openworkbook1()">📘 Work Book-वर्ग १ ला</button>
-
- <button class="btn btn-outline-success btn-custom" onClick="openworkbook2()">📘 Work Book-वर्ग २ रा</button>
-
- <button class="btn btn-outline-primary btn-custom" onClick="openworkbook3()">📘 Work Book-वर्ग ३ रा</button>
-
-<button class="btn btn-outline-info btn-custom" onClick="openworkbook4()">📘 Work Book-वर्ग ४ था</button>
-
-      <button class="btn btn-outline-success btn-custom" onClick="openenglish()">📘 English-Marathi Words</button>
-      <button class="btn btn-outline-info btn-custom" onclick="showQuizModule()">✏️ Grammar Quiz</button>
-      <button class="btn btn-outline-warning btn-custom" onClick="openfiveclass()">📄 5th Class Scholarship Paper</button>
-      <button class="btn btn-outline-danger btn-custom" onClick="opennigthclass()">📄 8th Class Scholarship Paper</button>
-     <button class="btn btn-outline-info btn-custom" onClick="openmultitable()">✏️ पाढे १ ते १००</button>
-      <button class="btn btn-outline-success btn-custom" onClick="opensquare()">✏️ वर्गमूळ १ ते १००</button>
-      <button class="btn btn-outline-primary btn-custom" onClick="opensuvichar()">💬 सुविचार संग्रह</button>
-      <button class="btn btn-outline-success btn-custom" onClick="openjocks()">💬 मराठी विनोद</button>
-    </div>
-
-    <a href="index.html" class="btn btn-secondary back-btn">🔙 Back to Login</a>
+<div class="container text-center py-5">
+  <div class="module-buttons">
+    <button class="btn btn-outline-info btn-custom" onClick="openmathproblems()">✏️ बेरीज-वजाबाकी-गुणाकार-भागाकर</button>
+    <button class="btn btn-outline-danger btn-custom" onClick="openworkbook1()">📘 Work Book-वर्ग १ ला</button>
+    <button class="btn btn-outline-success btn-custom" onClick="openworkbook2()">📘 Work Book-वर्ग २ रा</button>
+    <button class="btn btn-outline-primary btn-custom" onClick="openworkbook3()">📘 Work Book-वर्ग ३ रा</button>
+    <button class="btn btn-outline-info btn-custom" onClick="openworkbook4()">📘 Work Book-वर्ग ४ था</button>
+    <button class="btn btn-outline-success btn-custom" onClick="openenglish()">📘 English-Marathi Words</button>
+    <button class="btn btn-outline-info btn-custom" onclick="showQuizModule()">✏️ Grammar Quiz</button>
+    <button class="btn btn-outline-warning btn-custom" onClick="openfiveclass()">📄 5th Class Scholarship Paper</button>
+    <button class="btn btn-outline-danger btn-custom" onClick="opennigthclass()">📄 8th Class Scholarship Paper</button>
+    <button class="btn btn-outline-info btn-custom" onClick="openmultitable()">✏️ पाढे १ ते १००</button>
+    <button class="btn btn-outline-success btn-custom" onClick="opensquare()">✏️ वर्गमूळ १ ते १००</button>
+    <button class="btn btn-outline-primary btn-custom" onClick="opensuvichar()">💬 सुविचार संग्रह</button>
+    <button class="btn btn-outline-success btn-custom" onClick="openjocks()">💬 मराठी विनोद</button>
+    <button class="btn btn-outline-dark btn-custom" onclick="showLeaveTemplate()">📄 रजा अर्ज दाखवा</button>
   </div>
 
-  <!-- English-Marathi Words -->
-  <div id="words-module" class="container module-section">
-    <h3 class="text-center mb-4">📘 1000 English Words with Marathi Meanings</h3>
-    <div class="table-container">
-      <table class="table table-bordered table-striped">
-        <thead class="table-dark">
-          <tr><th>English</th><th>Marathi</th></tr>
-        </thead>
-        <tbody id="words-table-body">
-          <tr><td>Example</td><td>उदाहरण</td></tr>
-          <tr><td>Learn</td><td>शिका</td></tr>
-          <!-- Add more rows dynamically or statically -->
-        </tbody>
-      </table>
-    </div>
-  </div>
+  <a href="homeschool.html" class="btn btn-secondary back-btn">🔙 Back to Login</a>
+</div>
 
-  <!-- Grammar Quiz -->
-  <div id="quiz-module" class="container module-section">
-    <h3 class="text-center mb-4">✏️ English Grammar Quiz</h3>
-    <div id="quiz-questions"></div>
+<!-- English-Marathi Words -->
+<div id="words-module" class="container module-section">
+  <h3 class="text-center mb-4">📘 1000 English Words with Marathi Meanings</h3>
+  <div class="table-container">
+    <table class="table table-bordered table-striped">
+      <thead class="table-dark">
+        <tr><th>English</th><th>Marathi</th></tr>
+      </thead>
+      <tbody id="words-table-body">
+        <tr><td>Example</td><td>उदाहरण</td></tr>
+        <tr><td>Learn</td><td>शिका</td></tr>
+      </tbody>
+    </table>
   </div>
+</div>
+
+<!-- Leave Template -->
+<div id="leave-template" class="container module-section">
+  <h3 class="text-center mb-4">📄 शालेय रजा अर्ज टेम्पलेट</h3>
+  <div class="letter-box shadow-sm p-4 bg-white border rounded">
+    <p>[तुमचं संपूर्ण नाव]<br>
+    [तुमचा इयत्ता/वर्ग]<br>
+    [तारीख]</p>
+
+    <p>प्रति,<br>
+    [वर्गशिक्षकांचे नाव]<br>
+    [वर्गशिक्षकांची पदवी उदा. ८ वी चे वर्गशिक्षक]<br>
+    [शाळेचे नाव]<br>
+    [शाळेचा पत्ता]</p>
+
+    <p><strong>विषय:</strong> एका दिवसाच्या रजेबाबत विनंती</p>
+
+    <p>आदरणीय सर/मॅडम,</p>
+
+    <p>मी [रजेचा दिनांक] रोजी शाळेमध्ये उपस्थित राहू शकणार नाही, यासाठी मी एका दिवसाच्या रजेची विनंती करीत आहे. मी या दिवशी [रजेचे कारण - उदा. कौटुंबिक काम, वैद्यकीय तपासणी, तातडीचे काम] यामुळे गैरहजर राहणार आहे.</p>
+
+    <p>मी अनुपस्थितीत दिलेल्या अभ्यासक्रमाचे काम लवकरात लवकर पूर्ण करण्याचा प्रयत्न करीन.</p>
+
+    <p>आपल्या समजूतदारपणाबद्दल आणि सहकार्याबद्दल धन्यवाद.</p>
+
+    <p>आपला/आपली,<br>
+    [तुमचं नाव]<br>
+    [तुमचा स्वाक्षरी]</p>
+  </div>
+</div>
+
+<!-- Quiz Module -->
+<div id="quiz-module" class="container module-section">
+  <h3 class="text-center mb-4">✏️ English Grammar Quiz</h3>
+  <div id="quiz-questions"></div>
+</div>
 
 <script>
-  function openenglish() {
-    window.open("englishwords.pdf");
-  }
-
-  function openfiveclass() {
-    window.open("5thclass.pdf");
-  }
-
-  function opennigthclass() {
-    window.open("8thclass.pdf");
-  }
-
-  function opensuvichar() {
-    window.open("300सुविचार.pdf");
-  }
-
-  function openjocks() {
-    window.open("marathijocks.txt");
-  }
-
-
-function openmultitable()
-{
- window.open("Multiplicationtable.pdf");
-}
-
-function opensquare()
-{
-window.open("squarecube1.pdf");
-
-}
-
-
-
-function openmathproblems()
-{
-window.open("mathproblem.pdf");
-
-}
-
-function openworkbook1()
-{
-window.open("workbook1class.pdf");
-
-}
-
-function openworkbook2()
-{
-window.open("workbook2class.pdf");
-
-}
-
-
-function openworkbook3()
-{
-window.open("workbook3class.pdf");
-
-}
-
-
-function openworkbook4()
-{
-window.open("workbook4class.pdf");
-
-}
-
-
-
-
-
-
-
-
-
-  
   function hideAllModules() {
     document.querySelectorAll('.module-section').forEach(section => section.style.display = 'none');
   }
 
-  // Sample grammar questions with options and correct answers
+  function showLeaveTemplate() {
+    hideAllModules();
+    document.getElementById('leave-template').style.display = 'block';
+  }
+
+  function showQuizModule() {
+    hideAllModules();
+    const quizContainer = document.getElementById('quiz-questions');
+    quizContainer.innerHTML = '';
+
+    quizData.forEach((q, i) => {
+      const optionsHtml = q.options.map((opt, idx) => `
+        <li><label><input type="radio" name="q${i}" value="${idx}"/> ${opt}</label></li>
+      `).join('');
+
+      quizContainer.innerHTML += `
+        <div class="card mb-3 shadow-sm">
+          <div class="card-body">
+            <p><strong>${i + 1}.</strong> ${q.question}</p>
+            <ul>${optionsHtml}</ul>
+            <p class="feedback text-primary mt-2" id="feedback${i}"></p>
+          </div>
+        </div>`;
+    });
+
+    quizContainer.innerHTML += `
+      <button class="btn btn-success mt-3" onclick="submitQuiz()">Submit Quiz</button>
+      <h4 class="mt-4" id="score"></h4>`;
+
+    document.getElementById('quiz-module').style.display = 'block';
+  }
+
+  function submitQuiz() {
+    let score = 0;
+    quizData.forEach((q, i) => {
+      const selected = document.querySelector(`input[name="q${i}"]:checked`);
+      const feedback = document.getElementById(`feedback${i}`);
+      if (selected) {
+        const selectedIndex = parseInt(selected.value);
+        if (selectedIndex === q.answer) {
+          score++;
+          feedback.innerHTML = "✅ Correct!";
+          feedback.classList.add("text-success");
+          feedback.classList.remove("text-danger");
+        } else {
+          feedback.innerHTML = `❌ Wrong! Correct: ${q.options[q.answer]}`;
+          feedback.classList.add("text-danger");
+          feedback.classList.remove("text-success");
+        }
+      } else {
+        feedback.innerHTML = `❌ Not Attempted! Correct: ${q.options[q.answer]}`;
+        feedback.classList.add("text-danger");
+      }
+    });
+
+    document.getElementById('score').innerHTML = `🎯 You scored ${score} out of ${quizData.length}`;
+  }
+
   const quizData = [
     {
       question: "Choose the correct sentence:",
@@ -286,65 +275,20 @@ window.open("workbook4class.pdf");
     }
   ];
 
-  function showQuizModule() {
-    hideAllModules();
-    const quizContainer = document.getElementById('quiz-questions');
-    quizContainer.innerHTML = '';
-
-    quizData.forEach((q, i) => {
-      const optionsHtml = q.options.map((opt, idx) => `
-        <li>
-          <label>
-            <input type="radio" name="q${i}" value="${idx}" />
-            ${opt}
-          </label>
-        </li>
-      `).join('');
-
-      quizContainer.innerHTML += `
-        <div class="card mb-3 shadow-sm">
-          <div class="card-body">
-            <p><strong>${i + 1}.</strong> ${q.question}</p>
-            <ul>${optionsHtml}</ul>
-            <p class="feedback text-primary mt-2" id="feedback${i}"></p>
-          </div>
-        </div>
-      `;
-    });
-
-    quizContainer.innerHTML += `
-      <button class="btn btn-success mt-3" onclick="submitQuiz()">Submit Quiz</button>
-      <h4 class="mt-4" id="score"></h4>
-    `;
-
-    document.getElementById('quiz-module').style.display = 'block';
-  }
-
-  function submitQuiz() {
-    let score = 0;
-    quizData.forEach((q, i) => {
-      const selected = document.querySelector(`input[name="q${i}"]:checked`);
-      const feedback = document.getElementById(`feedback${i}`);
-      if (selected) {
-        const selectedIndex = parseInt(selected.value);
-        if (selectedIndex === q.answer) {
-          score++;
-          feedback.innerHTML = "✅ Correct!";
-          feedback.classList.remove("text-danger");
-          feedback.classList.add("text-success");
-        } else {
-          feedback.innerHTML = `❌ Wrong! Correct: ${q.options[q.answer]}`;
-          feedback.classList.remove("text-success");
-          feedback.classList.add("text-danger");
-        }
-      } else {
-        feedback.innerHTML = `❌ Not Attempted! Correct: ${q.options[q.answer]}`;
-        feedback.classList.add("text-danger");
-      }
-    });
-
-    document.getElementById('score').innerHTML = `🎯 You scored ${score} out of ${quizData.length}`;
-  }
+  // PDF/links openers
+  const openPDF = (filename) => window.open(filename);
+  const openmathproblems = () => openPDF("mathproblem.pdf");
+  const openworkbook1 = () => openPDF("workbook1class.pdf");
+  const openworkbook2 = () => openPDF("workbook2class.pdf");
+  const openworkbook3 = () => openPDF("workbook3class.pdf");
+  const openworkbook4 = () => openPDF("workbook4class.pdf");
+  const openenglish = () => openPDF("englishwords.pdf");
+  const openfiveclass = () => openPDF("5thclass.pdf");
+  const opennigthclass = () => openPDF("8thclass.pdf");
+  const openmultitable = () => openPDF("Multiplicationtable.pdf");
+  const opensquare = () => openPDF("squarecube1.pdf");
+  const opensuvichar = () => openPDF("300सुविचार.pdf");
+  const openjocks = () => openPDF("marathijocks.txt");
 </script>
 
 </body>
