@@ -35,15 +35,80 @@
       border-radius: 20px;
     }
 
-    .center-text {
-      text-align: center;
-      padding: 80px 20px;
-      background: linear-gradient(135deg, #ffffff 40%, #f3f3f3);
-      border-radius: 30px;
-      margin: 50px auto;
-      max-width: 800px;
-      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
-    }
+      .center-text {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #ffffff 40%, #f3f3f3);
+  border-radius: 30px;
+  margin: 50px auto;
+  max-width: 800px;
+  box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.school-title {
+  font-family: 'Baloo 2', cursive;
+  font-size: 3.8rem;
+  font-weight: 700;
+  color: #004aad;
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(to right, #004aad, #6a11cb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeSlideDown 1.2s ease-in-out;
+}
+
+.highlighted-word {
+  color: #ff4081;
+  background: linear-gradient(90deg, #ff8a65, #ff4081);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 8px rgba(255, 64, 129, 0.3);
+}
+
+.school-subtitle {
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: #333;
+  font-style: italic;
+  animation: fadeSlideUp 1.2s ease-in-out;
+}
+
+.underline {
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(to right, #004aad, #00c6ff);
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  animation: grow 1s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {opacity: 0; transform: scale(0.95);}
+  100% {opacity: 1; transform: scale(1);}
+}
+
+@keyframes fadeSlideDown {
+  0% {opacity: 0; transform: translateY(-30px);}
+  100% {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeSlideUp {
+  0% {opacity: 0; transform: translateY(30px);}
+  100% {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes grow {
+  0% {width: 0;}
+  100% {width: 120px;}
+}
+
+
+
+
 
     .center-text h1 {
       font-size: 3rem;
@@ -109,6 +174,27 @@
       align-items: center;
       justify-content: center;
     }
+
+
+
+    .marquee-container {
+  background: linear-gradient(to right, #ff6f61, #ffcc70, #ffa69e);
+  padding: 15px 0;
+  border-radius: 20px;
+  margin: 30px auto;
+  width: 95%;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.marquee-container marquee {
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  letter-spacing: 1px;
+}
+
   </style>
 </head>
 
@@ -120,11 +206,20 @@
     <button class="btn btn-light login-btn" data-bs-toggle="modal" data-bs-target="#loginModal">Login</button>
   </div>
 
-  <!-- Center Section -->
-  <div class="center-text">
-    <h1>जि.प.प्रा.शाळा सिंधि</h1>
-    <h3>ता.उमरी जि.नांदेड</h3>
-  </div>
+<!-- Marquee Section -->
+<div class="marquee-container">
+  <marquee behavior="scroll" direction="left" scrollamount="7">
+    🎉 स्वागत आहे आदर्श गाव सिंधी शाळेच्या संकेतस्थळावर! 🎓 शिक्षण हीच खरी संपत्ती आहे! 📚 एकत्र येऊया, शिकूया आणि घडवूया उज्वल भविष्य! 🚀
+  </marquee>
+</div>
+
+  
+   <!-- Center Section -->
+<div class="center-text">
+  <h1 class="school-title">जि.प.प्रा.शाळा <span class="highlighted-word">सिंधि</span></h1>
+  <div class="underline mx-auto"></div>
+  <h3 class="school-subtitle">ता.उमरी जि.नांदेड</h3>
+</div>
 
   <!-- Login Modal -->
   <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
